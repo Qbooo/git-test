@@ -1,10 +1,5 @@
 # 👋 Hi! I'm Qbooo
 
-## 📊 GitHub Stats
-[![GitHub Streak](https://streak-stats.demolab.com/?user=Qbooo&theme=default)](https://git.io/streak-stats)
-
-![Profile Summary](http://github-profile-summary-cards.vercel.app/api/cards/profile-details?username=Qbooo&theme=default)
-
 ---
 
 ## 🔧 Tech Skills
