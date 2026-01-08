@@ -41,8 +41,8 @@ List<Integer> squaredNumbers = numbers.parallelStream()
 ```
 === 데이터 크기: 1000000개 ===
 
-[forEach 방식] 실행 시간: XXms
-[collect 방식] 실행 시간: YYms  (더 빠름!)
+[forEach 방식] 실행 시간: 56ms
+[collect 방식] 실행 시간: 55ms  (더 빠름!)
 ```
 
 ---
@@ -66,7 +66,10 @@ numbers.parallelStream().forEach(number -> {
     results2.add(number * 2);  // ✅ Thread-Safe!
 });
 ```
-
+```
+실행시간: 2992700ns
+실행시간: 804000ns
+```
 ### 💡 왜 개선되었나?
 
 1. **ArrayList의 문제점**
@@ -123,11 +126,11 @@ List<String> result = names.stream()
 ```
 [test1 - 체이닝 많음]
 결과: [ALICE is a name]
-걸린 시간(나노초): XXX ns
+걸린 시간(나노초): 17741400 ns
 
 [test2 - 체이닝 최적화]
 결과: [ALICE is a name]
-걸린 시간(나노초): YYY ns  (더 빠름!)
+걸린 시간(나노초): 1140400 ns  (더 빠름!)
 ```
 
 ---
@@ -190,7 +193,7 @@ ForkJoinPool.commonPool-worker-1 processing: 2
 ForkJoinPool.commonPool-worker-2 processing: 3
 main processing: 1
 ... (스레드가 경쟁하며 출력)
-[비효율 코드 실행 시간(ns)] : 매우 느림 (수백만 ns)
+[비효율 코드 실행 시간(ns)] : 매우 느림 37,534,500 (수백만 ns)
 ```
 
 #### 2️⃣ 큰 데이터셋에서 parallelStream + collect
@@ -198,6 +201,7 @@ main processing: 1
 - **데이터가 커질수록 병렬 처리의 진가 발휘!**
 - 1,000,000개의 데이터를 여러 스레드가 분담하여 처리
 - `collect()`는 내부적으로 효율적인 병합 전략 사용
+- [개선 코드 실행 시간(ns)] : 99,108,600 (수백만 ns)
 - **중요**: 데이터가 100만 개로 늘어나도 실행 시간이 100만 배 늘지 않음!
 
 **스케일링 효과**:
