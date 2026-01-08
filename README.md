@@ -47,7 +47,7 @@ List<Integer> squaredNumbers = numbers.parallelStream()
 
 ---
 
-## 🎯 사례 2: ParallelStream에서 Thread-Safe 컬렉션 사용
+## 🎯 사례 2: ParallelStream에서 Thread-Safe 컬렉션 사용- 6번
 
 ### 📂 파일: `StreamAPI3.java`
 
@@ -88,7 +88,7 @@ numbers.parallelStream().forEach(number -> {
 
 ---
 
-## 🎯 사례 3: Stream 체이닝 최적화
+## 🎯 사례 3: Stream 체이닝 최적화 - 4번
 
 ### 📂 파일: `OverusingTest.java`
 
@@ -135,7 +135,7 @@ List<String> result = names.stream()
 
 ---
 
-## 📋 전체 성능 비교 및 병렬 처리의 스케일링 효과
+## 📋 전체 성능 비교 및 병렬 처리의 스케일링 효과 - 3번
 
 ### 📂 파일: `case03_compare.java`
 
